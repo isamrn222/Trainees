@@ -13,6 +13,8 @@ const responsabilityRouter= require('./src/responsabilitie/responsabilitieRoute'
 const responsabilitiestraineeRouter= require('./src/responsabilitiestrainee/responsabilitiestraineeRoute');
 const traineeRouter= require('./src/trainee/traineeRoute');
 
+
+//comentario
 //configuracion de middlewares
 const app = express();
 app.use(bodyParser.json());
