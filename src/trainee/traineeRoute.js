@@ -3,19 +3,19 @@ const router= express.Router();
 const TraineeController= require('./traineeController');
 
 //Ruta para obtener todas las responsabilidades
-router.get('/',TraineeController.getTrainee);
+router.get('/trainees',TraineeController.getTrainee);
 
 //ruta para obtener todas las responsabilidades por su id
-router.get('/:id',TraineeController.getTraineeById);
+router.get('/trainees/:id',TraineeController.getTraineeById);
 
 //ruta para crear nuevas responsabilidades
-router.post('/',TraineeController.createTrainee);
+router.post('/trainees/',TraineeController.createTrainee);
 
 //ruta para crear nuevas responsabilidades
-router.put('/:id',TraineeController.updateTrainee);
+router.put('/trainees/:id',TraineeController.updateTrainee);
 
 //ruta para eliminar responsabilidades
-router.delete('/:id',TraineeController.deleteTrainee);
+router.delete('/trainees/:id',TraineeController.deleteTrainee);
 
 module.exports=router;
 

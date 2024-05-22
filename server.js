@@ -31,10 +31,10 @@ app.get('/', (req, res) => {
 });
 
 
-app.use('/institutes',instituteRouter);
-app.use('/responsabilities',responsabilityRouter);
-app.use('/responsabilitiestrainees',responsabilitiestraineeRouter);
-app.use('/trainees',traineeRouter);
+app.use('/fepi',instituteRouter);
+app.use('/fepi',responsabilityRouter);
+app.use('/fepi',responsabilitiestraineeRouter);
+app.use('/fepi',traineeRouter); 
 
 app.listen(PORT, () => {
   console.log(`Servidor Express en funcionamiento, puerto: ${PORT}`);
