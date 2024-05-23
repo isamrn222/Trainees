@@ -9,7 +9,7 @@ router.get('/institutes',InstituteController.getInstitutes);
 router.get('/institutes/:id',InstituteController.getInstituteById);
 
 //ruta para crear nuevas instituciones
-router.post('/institutes',InstituteController.createInstitute);
+router.post('/institutes/create',InstituteController.createInstitute);
 
 //ruta para crear nuevas instituciones
 router.put('/institutes:id',InstituteController.updateInstitute);

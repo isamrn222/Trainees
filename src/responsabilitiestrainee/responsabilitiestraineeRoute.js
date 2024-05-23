@@ -9,7 +9,7 @@ router.get('/responsabilitiestrainees',ResponsabilitiestraineeController.getResp
 router.get('/responsabilitiestrainees/:id',ResponsabilitiestraineeController.getResponsabilitiesTraineesById);
 
 //ruta para crear nuevas responsabilidades
-router.post('/responsabilitiestrainees',ResponsabilitiestraineeController.createResponsabilitiesTrainees);
+router.post('/responsabilitiestrainees/create',ResponsabilitiestraineeController.createResponsabilitiesTrainees);
 
 //ruta para crear nuevas responsabilidades
 router.put('/responsabilitiestrainees/:id',ResponsabilitiestraineeController.updateResponsabilitiesTrainees);

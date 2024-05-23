@@ -9,7 +9,7 @@ router.get('/trainees',TraineeController.getTrainee);
 router.get('/trainees/:id',TraineeController.getTraineeById);
 
 //ruta para crear nuevas responsabilidades
-router.post('/trainees/',TraineeController.createTrainee);
+router.post('/trainees/create',TraineeController.createTrainee);
 
 //ruta para crear nuevas responsabilidades
 router.put('/trainees/:id',TraineeController.updateTrainee);
