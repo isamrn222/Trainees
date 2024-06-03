@@ -1,101 +1,102 @@
 
-# ###
-# POST http://localhost:3008/institutes HTTP/1.1
-# Content-Type: application/json
+###
+POST http://localhost:10000/fepi/institutes/create HTTP/1.1
+Content-Type: application/json
 
-# {
-#   "Nit": "6543",
-#   "Name": "sofia m",
-#   "Location": "calle 67 # 26a 20",
-#   "Contact": "sofia marin castro",
-#   "ContactEmail": "sofia@email.com",
-#   "ContactPhoneNumber": 23456345
-# }
+{
+  "Nit": "98999",
+  "Name": "salle",
+  "Location": "calle 67 # 26a 20",
+  "Contact": "sofia marin castro",
+  "ContactEmail": "sofia@email.com",
+  "ContactPhoneNumber": 23456345
+}
 
-# ###
-# GET http://localhost:10000/institutes HTTP/1.1
+###
+GET http://localhost:10000/fepi/institutes/6639a1376142dce52eb93c34 HTTP/1.1
 
-# ###
-# PUT http://localhost:3007/institutes/663514ef8bb6bedc751d1cf0 HTTP/1.1
-# Content-Type: application/json
+###
+PUT http://localhost:10000/fepi/institutes/6639a1376142dce52eb93c34 HTTP/1.1
+Content-Type: application/json
 
-# {
-#   "Nit": "11111",
-#   "Name": "cristian kkkk",
-#   "Location": "calle 67 # 26a 20",
-#   "Contact": "cristian rendon castro",
-#   "ContactEmail": "cristian@email.com",
-#   "ContactPhoneNumber": 23456345
-# }
+{
+  "Name": "Leo Educativa"
+}
 
 # ###
 # DELETE http://localhost:3007/institutes/6635123978ce656e3213133c HTTP/1.1
 
 #_________________________________________________________________________________________________________-
-# ###
-# POST http://localhost:3008/responsabilities HTTP/1.1
-# Content-Type: application/json
+###
+POST http://localhost:3000/responsabilities HTTP/1.1
+Content-Type: application/json
 
-# {
-#   "Description": "organizo papeles y sillas",
-#   "Location": "sede 2",
-#   "Duration": "2 hora",
-#   "State":1
-# }
+{
+  "Description": "organizo papeles y sillas",
+  "Location": "sede 2",
+  "Duration": "2 hora",
+  "State":1
+}
 
 
-# ###
-# GET http://localhost:10000/responsabilities HTTP/1.1
+###
+GET http://localhost:3000/fepi/responsabilities HTTP/1.1
 
 # ###
 # GET http://localhost:10000/responsabilities/663542d36892a1e111fc6915 HTTP/1.1
 
 
+###
+PUT http://localhost:3000/fepi/responsabilities/664cfddb92cfcaf476ca5ba2 HTTP/1.1
+Content-Type: application/json
 
-# ###
-# PUT http://localhost:10000/responsabilities/663542d36892a1e111fc6915 HTTP/1.1
-# Content-Type: application/json
-
-# {
-#   "Description": "organizo documentos y sillas",
-#   "Location": "sede 1",
-#   "Duration": "4 hora",
-#   "State":0
-# }
+{
+  "Description": "Conectar sistemas de sonido",
+  "Location": "Fepi-Sede2",
+  "Duration": "5",
+  "State": 2
+}
 
 
 # ###
 # DELETE http://localhost:10000/responsabilities/663542d36892a1e111fc6915 HTTP/1.1
 
 #_________________________________________________________________________________________________________-
+###
+POST http://localhost:10000/fepi/trainees/create HTTP/1.1
+Content-Type: application/json
+
+{
+  "FirstName": "leo",
+  "LastName": "marin",
+  "DocumentType": "Cedula",
+  "DocumentNumber": 1038866112,
+  "PhoneNumber": 3007546745,
+  "InstituteID": "663514ef8bb6bedc751d1cf5"
+}
+
+
+
+###
+GET http://localhost:10000/fepi/trainees HTTP/1.1
+1003987728
+
+###
+GET http://localhost:10000/fepi/trainees/664d022692cfcaf476ca5bf8 HTTP/1.1
+
+
 # ###
-# POST http://localhost:10000/trainees HTTP/1.1
+# PUT http://localhost:10000/fepi/trainees/66554e8b304fd1fd0590cc17 HTTP/1.1
 # Content-Type: application/json
 
 # {
-#   "FirstName": "juan",
-#   "LastName": "juan m",
-#   "DocumentType": "cc",
-#   "DocumentNumber": 19888676,
-#   "PhoneNumber": 3184750786,
-#   "InstituteID": "663514ef8bb6bedc751d1cf0"
-#}
-# ###
-# GET http://localhost:10000/trainees HTTP/1.1
-
-# ###
-# GET http://localhost:3007/trainees/66364f5de845a4dd4c7275db HTTP/1.1
-# ###
-# PUT http://localhost:3007/trainees/66364f5de845a4dd4c7275db HTTP/1.1
-# Content-Type: application/json
-
-# {
-#   "FirstName": "esteban",
-#   "LastName": "salazar m",
-#   "DocumentType": "cc",
-#   "DocumentNumber": 1456789,
+#   "FirstName": "jose ",
+#   "LastName": "herrera",
+#   "DocumentType": "Cedula",
+#   "DocumentNumber": 1017925045,
 #   "PhoneNumber": 308475888,
-#   "InstituteID": "663514ef8bb6bedc751d1cf0"
+#   "InstituteID": "6639a1376142dce52eb93c34"
+
 # }
 
 # ###

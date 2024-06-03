@@ -18,5 +18,3 @@ router.put('/trainees/:id',TraineeController.updateTrainee);
 router.delete('/trainees/:id',TraineeController.deleteTrainee);
 
 module.exports=router;
-
-

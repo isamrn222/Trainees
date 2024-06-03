@@ -12,7 +12,7 @@ router.get('/institutes/:id',InstituteController.getInstituteById);
 router.post('/institutes/create',InstituteController.createInstitute);
 
 //ruta para crear nuevas instituciones
-router.put('/institutes:id',InstituteController.updateInstitute);
+router.put('/institutes/:id',InstituteController.updateInstitute);
 
 //ruta para eliminar instituciones
 router.delete('/institutes/:id',InstituteController.deleteInstitute);

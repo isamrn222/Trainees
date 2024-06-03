@@ -29,49 +29,60 @@ exports.getTraineeById = async (req, res) => {
 };
 
 
-//Controlador para crear nuvo institucion
 exports.createTrainee = async (req, res) => {
-    const { FirstName, LastName, DocumentType, DocumentNumber, PhoneNumber, InstituteID} = req.body;
-    const trainee = new Traineemodel({
-        FirstName,
-        LastName,
-        DocumentType,
-        DocumentNumber,
-        PhoneNumber,
-        InstituteID
-    });
+
     try {
-        const newtrainee = await trainee.save();
-        res.status(201).json(newtrainee);
+        const { DocumentNumber } = req.body;
+        const traineeExistente = await Traineemodel.findOne({ DocumentNumber });
+
+        if (traineeExistente) {
+            return res.status(400).send({ message: 'El número de cédula ya está en uso' });
+        }
+
+        const Trainee = new Traineemodel(req.body);
+        
+        await Trainee.save();
+        res.status(201).send(Trainee);
     } catch (error) {
-        res.status(400).json({ message: 'Ocurrió un error al crear el practicante' });
+        res.status(400).send({ message: error.message });
     }
 };
 
 // Controlador para actualizar un cliente existente
 exports.updateTrainee = async (req, res) => {
     try {
-        const trainee = await Traineemodel.findById(req.params.id);
-        if (!trainee) {
-            return res.status(404).json({ message: 'Practicante no encontrado' });
+        const updates = Object.keys(req.body);
+        const allowedUpdates = ['FirstName', 'LastName', 'DocumentType', 'DocumentNumber', 'PhoneNumber', 'InstituteID'];
+
+
+        const isValidOperation = updates.every(update => allowedUpdates.includes(update));
+
+        if (!isValidOperation) {
+            return res.status(400).send({ message: 'Actualización no permitida' });
         }
-        
-        const { FirstName, LastName, DocumentType,DocumentNumber, PhoneNumber, InstituteID} = req.body;
-        if (FirstName != null) trainee.FirstName = FirstName;
-        if (LastName != null) trainee.LastName = LastName;
-        if (DocumentType != null) trainee.DocumentType = DocumentType;
-        if (DocumentNumber != null) trainee.DocumentNumber = DocumentNumber;
-        if (PhoneNumber != null) trainee.PhoneNumber = PhoneNumber;
-        if (InstituteID != null) trainee.InstituteID = InstituteID;
 
+        // Validar que el nuevo número de cédula no esté en uso
+        if (req.body.DocumentNumber) {
+            const TraineesExistente = await Traineemodel.findOne({ DocumentNumber: req.body.DocumentNumber });
+            if (TraineesExistente && TraineesExistente._id.toString() !== req.params.id) {
+                return res.status(400).send({ message: 'El número de cédula ya está en uso' });
+            }
+        }
 
+        const trainees = await Traineemodel.findById(req.params.id);
+        if (!trainees) {
+            return res.status(404).send({ message: 'Practicante no encontrado' });
+        }
 
-        const updatetrainee = await trainee.save();
-        res.json(updatetrainee);
+        updates.forEach(update => trainees[update] = req.body[update]);
+        await trainees.save();
+
+        res.status(200).send(trainees);
     } catch (error) {
-        console.error(error);
-        res.status(400).json({ message: 'Ocurrió un error al actualizar el practicante' });
-    }
+        res.status(400).send({ message: error.message });
+
+
+    } 
 };
 
 

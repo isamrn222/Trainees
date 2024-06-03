@@ -22,7 +22,7 @@ app.use(morgan('dev'));
 app.use(cors());
 connectDB();
 
-const PORT = process.env.PORT || 3000;
+const PORT = process.env.PORT || 10000;
 
 
 
