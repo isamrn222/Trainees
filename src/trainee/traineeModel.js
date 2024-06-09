@@ -40,6 +40,10 @@ const traineeSchema = new mongoose.Schema({
             message: 'El número de teléfono debe contener solo números y debe contener entre 7 y 14 dígitos numéricos'
         },
     },
+    State: {
+        type: Number,
+        required: [true,'el campo estado es requerido']
+    },
     InstituteID: {
         type: mongoose.Schema.Types.ObjectId,
         ref: 'institute', // Nombre del modelo al que se hace referencia mirar si es con s o sin s

@@ -14,17 +14,20 @@ const ResponsabilitiesTraineeSchema = new mongoose.Schema({
         type: String,
         required: [true,'el campo observaciones es requerido']
     },
-    TraineeID: {
-        type: mongoose.Schema.Types.ObjectId,
-        ref: 'trainee', // Nombre del modelo al que se hace referencia mirar si es con s o sin s
-        required: [true,'el campo nombre practicante es requerido']
-    
+    State: {
+        type: Number,
+        required: [true,'el campo estado es requerido']
     },
-    ResponsabilitieID: {
+    TraineeID: [{
         type: mongoose.Schema.Types.ObjectId,
-        ref: 'Responsabilitie', // Nombre del modelo al que se hace referencia mirar si es con s o sin s
+        ref: 'trainee', 
+        required: [true, 'El campo nombre del practicante es requerido']
+    }],
+    ResponsabilitieID:[{
+        type: mongoose.Schema.Types.ObjectId,
+        ref: 'Responsabilitie', 
         required: [true,'el campo responsabilidades es requerido']
-    },
+    }],
     // Otros campos que puedas necesitar para tu modelo de cliente
 }, { timestamps: true }); // Añadir timestamps para createdAt y updatedAt
 

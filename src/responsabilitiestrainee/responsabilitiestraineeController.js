@@ -31,11 +31,12 @@ exports.getResponsabilitiesTraineesById = async (req, res) => {
 
 //Controlador para crear nuvo institucion
 exports.createResponsabilitiesTrainees = async (req, res) => {
-    const { StartDate, FinishDate, Observations, TraineeID,ResponsabilitieID,} = req.body;
+    const { StartDate, FinishDate, Observations,State, TraineeID,ResponsabilitieID,} = req.body;
     const responsabilitiesTrainees = new ResponsabilitiesTraineemodel({
         StartDate,
         FinishDate,
         Observations,
+        State,
         TraineeID,
         ResponsabilitieID
     });
@@ -55,10 +56,11 @@ exports.updateResponsabilitiesTrainees = async (req, res) => {
             return res.status(404).json({ message: 'La responsabilidad del practicante no fue encontrada' });
         }
         
-        const {StartDate, FinishDate,Observations, TraineeID, ResponsabilitieID} = req.body;
+        const {StartDate, FinishDate,Observations,State, TraineeID, ResponsabilitieID} = req.body;
         if (StartDate != null) responsabilitiesTrainees.StartDate = StartDate;
         if (FinishDate != null) responsabilitiesTrainees.FinishDate = FinishDate;
         if (Observations != null) responsabilitiesTrainees.Observations = Observations;
+        if (State != null) responsabilitiesTrainees.State = State;
         if (TraineeID != null) responsabilitiesTrainees.TraineeID = TraineeID;
         if (ResponsabilitieID != null) responsabilitiesTrainees.ResponsabilitieID = ResponsabilitieID;
 
