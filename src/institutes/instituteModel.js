@@ -38,6 +38,10 @@ const instituteSchema = new mongoose.Schema({
             message: 'El número de teléfono debe contener solo números y debe contener entre 7 y 14 dígitos numéricos'
         },
     },
+    State: {
+        type: Number,
+        required: [true,'el campo estado es requerido']
+    },
     // Otros campos que puedas necesitar para tu modelo de cliente
 }, { timestamps: true }); // Añadir timestamps para createdAt y updatedAt
 

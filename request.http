@@ -119,9 +119,9 @@ Content-Type: application/json
 {
   "StartDate": "12:01",
   "FinishDate": "1:00",
-  "Observations": "no se que poner aqui",
+  "Observations": "lavar",
   "State":2,
-  "TraineeID": "6636544b806edadb01c8b112",
+  "TraineeID":["6662b80b7661f1f31a61721d","666636581b9b2e2b6d37ecc7"],
   "ResponsabilitieID": ["663543056892a1e111fc6919", "666291e57661f1f31a616c4b"]
 }
 

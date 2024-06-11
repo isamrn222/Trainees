@@ -31,14 +31,15 @@ exports.getInstituteById = async (req, res) => {
 
 //Controlador para crear nuvo institucion
 exports.createInstitute = async (req, res) => {
-    const { Nit, Name, Location, Contact, ContactEmail, ContactPhoneNumber} = req.body;
+    const { Nit, Name, Location, Contact, ContactEmail, ContactPhoneNumber,State} = req.body;
     const institute = new Institute({
         Nit,
         Name,
         Location,
         Contact,
         ContactEmail,
-        ContactPhoneNumber 
+        ContactPhoneNumber,
+        State
     });
     try {
         const newinstitute = await institute.save();
@@ -63,6 +64,8 @@ exports.updateInstitute = async (req, res) => {
         if (Contact != null) institute.Contact = Contact;
         if (ContactEmail != null) institute.ContactEmail = ContactEmail;
         if (ContactPhoneNumber != null) institute.ContactPhoneNumber = ContactPhoneNumber;
+        if (State != null) institute.State = State;
+
 
         const updatedinstitute = await institute.save();
         res.json(updatedinstitute);
