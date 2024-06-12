@@ -9,24 +9,25 @@ Content-Type: application/json
   "Location": "calle 67 # 26a 20",
   "Contact": "sofia marin castro",
   "ContactEmail": "sofia@email.com",
-  "ContactPhoneNumber": 23456345
+  "ContactPhoneNumber": 23456345,
+  "State": 1
 }
 
 ###
 GET http://localhost:10000/fepi/institutes HTTP/1.1
 
 ###
-PUT http://localhost:10000/fepi/institutes/665e683dfb2f4d91e813e1ae HTTP/1.1
+PUT http://localhost:10000/fepi/institutes/666a21f4c8946305eed64d28 HTTP/1.1
 Content-Type: application/json
 
 {
-  "Contact": "daniel",
-  "Nit": "98999hhhh",
+
   "Name": "salleee",
   "Location": "calle 67 # 26a 2000",
   "Contact": "daniel",
   "ContactEmail": "daniel@email.com",
-  "ContactPhoneNumber": 23456345
+  "ContactPhoneNumber": 23456345,
+  "State":1
 }
 
 # ###

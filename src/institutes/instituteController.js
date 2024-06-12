@@ -57,7 +57,7 @@ exports.updateInstitute = async (req, res) => {
             return res.status(404).json({ message: 'Institución no encontrado' });
         }
         
-        const { Nit, Name, Location, Contact, ContactEmail, ContactPhoneNumber } = req.body;
+        const { Nit, Name, Location, Contact, ContactEmail, ContactPhoneNumber,State } = req.body;
         if (Nit != null) institute.Nit = Nit;
         if (Name != null) institute.Name = Name;
         if (Location != null) institute.Location = Location;
