@@ -44,6 +44,10 @@ const traineeSchema = new mongoose.Schema({
         type: Number,
         required: [true,'el campo estado es requerido']
     },
+    Email: {
+        type: String,
+        required: [true,'el campo email es requerido']
+    },
     InstituteID: {
         type: mongoose.Schema.Types.ObjectId,
         ref: 'institute', // Nombre del modelo al que se hace referencia mirar si es con s o sin s
