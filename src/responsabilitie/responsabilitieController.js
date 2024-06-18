@@ -31,11 +31,10 @@ exports.getResponsabilitieById = async (req, res) => {
 
 //Controlador para crear nuvo institucion
 exports.createResponsabilitie = async (req, res) => {
-    const { Description, Location, Duration, State} = req.body;
+    const { Description, Location, State} = req.body;
     const responsabilitie = new Responsabilitiemodel({
         Description,
         Location,
-        Duration,
         State,
     });
     try {
@@ -57,7 +56,6 @@ exports.updateResponsabilitie = async (req, res) => {
         const { Description, Location, Duration, State} = req.body;
         if (Description != null) responsabilitie.Description = Description;
         if (Location != null) responsabilitie.Location = Location;
-        if (Duration != null) responsabilitie.Duration = Duration;
         if (State != null) responsabilitie.State = State;
 
 

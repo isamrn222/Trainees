@@ -10,10 +10,6 @@ const responsabilitieSchema = new mongoose.Schema({
         type: String,
         required: [true,'el campo ubicación es requerido']
     },
-    Duration: {
-        type: Number,
-        required: [true,'el campo duración es requerido']
-    },
     State: {
         type: Number,
         required: [true,'el campo estado es requerido']

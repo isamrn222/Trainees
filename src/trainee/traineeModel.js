@@ -1,6 +1,5 @@
 const mongoose = require('mongoose');
 
-// Definición del esquema para el modelo de cliente
 const traineeSchema = new mongoose.Schema({
     FirstName: {
         type: String,
@@ -50,13 +49,13 @@ const traineeSchema = new mongoose.Schema({
     },
     InstituteID: {
         type: mongoose.Schema.Types.ObjectId,
-        ref: 'institute', // Nombre del modelo al que se hace referencia mirar si es con s o sin s
+        ref: 'institute',
         required: true
     },
-    // Otros campos que puedas necesitar para tu modelo de cliente
-}, { timestamps: true }); // Añadir timestamps para createdAt y updatedAt
+   
+}, { timestamps: true });
 
-// Crear el modelo de cliente a partir del esquema
-const Trainee = mongoose.model('Trainee', traineeSchema);// singular
+
+const Trainee = mongoose.model('Trainee', traineeSchema);//se crea singular pero en mongo aparece con s
 
 module.exports=Trainee;
