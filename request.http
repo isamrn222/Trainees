@@ -121,7 +121,7 @@ Content-Type: application/json
   "FinishDate": "1:00",
   "Observations": "planchar",
   "State":2,
-  "Duration": 3,
+  "Duration": "05:30",
   "TraineeID":"6662b80b7661f1f31a61721d",
   "ResponsabilitieID":"666291e57661f1f31a616c4b"
 }

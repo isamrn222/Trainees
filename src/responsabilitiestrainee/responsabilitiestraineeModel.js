@@ -19,16 +19,16 @@ const ResponsabilitiesTraineeSchema = new mongoose.Schema({
         required: [true,'el campo estado es requerido']
     },
     Duration: {
-        type: Number,
-        required: [true, 'El campo duración es requerido'],
+        type: String,
         validate: {
-            validator: function(value) {
-         
-                return value >= 0;
+            validator: function(v) {
+                return /^\d{1,2}:\d{2}$/.test(v); //esto es para validar que sea formato hh:mm
             },
-            message: 'La duración debe ser un valor positivo.'
-        }
+            message: props => `${props.value} no es un formato de duración válido.`
+        },
+        required: true
     },
+
     TraineeID: {
         type: mongoose.Schema.Types.ObjectId,
         ref: 'trainee', 
