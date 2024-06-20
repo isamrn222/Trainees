@@ -32,8 +32,17 @@ exports.getTraineeById = async (req, res) => {
 exports.createTrainee = async (req, res) => {
 
     try {
+
+        const { DocumentNumber } = req.body;
+        const Existente = await Traineemodel.findOne({ DocumentNumber });
+
+        if (Existente) {
+            return res.status(400).send({ message: 'El número de cédula ya está en uso' });
+        }
+
+
         const Trainee = new Traineemodel(req.body);
-        
+
         await Trainee.save();
         res.status(201).send(Trainee);
     } catch (error) {
@@ -45,7 +54,7 @@ exports.createTrainee = async (req, res) => {
 exports.updateTrainee = async (req, res) => {
     try {
         const updates = Object.keys(req.body);
-        const allowedUpdates = ['FirstName', 'LastName', 'DocumentType', 'DocumentNumber', 'PhoneNumber','State','Email', 'InstituteID'];
+        const allowedUpdates = ['FirstName', 'LastName', 'DocumentType', 'DocumentNumber', 'PhoneNumber', 'State', 'Email', 'InstituteID'];
 
 
         const isValidOperation = updates.every(update => allowedUpdates.includes(update));
@@ -53,6 +62,17 @@ exports.updateTrainee = async (req, res) => {
         if (!isValidOperation) {
             return res.status(400).send({ message: 'Actualización no permitida' });
         }
+
+        // Validar que el nuevo número de cédula no esté en uso
+        if (req.body.DocumentNumber) {
+            const Existente = await Traineemodel.findOne({ DocumentNumber: req.body.DocumentNumber });
+            if (Existente && Existente._id.toString() !== req.params.id) {
+                return res.status(400).send({ message: 'El número de cédula ya está en uso' });
+            }
+        }
+
+
+
 
         const trainees = await Traineemodel.findById(req.params.id);
         if (!trainees) {
@@ -67,7 +87,7 @@ exports.updateTrainee = async (req, res) => {
         res.status(400).send({ message: error.message });
 
 
-    } 
+    }
 };
 
 
@@ -81,7 +101,7 @@ exports.deleteTrainee = async (req, res) => {
         await trainee.deleteOne();
         res.json({ message: 'Practicante eliminado' });
     } catch (error) {
-        res.status(500).json({ message: 'Ocurrió un error al eliminar el practicante'});
+        res.status(500).json({ message: 'Ocurrió un error al eliminar el practicante' });
     }
 };
 

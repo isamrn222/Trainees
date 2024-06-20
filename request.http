@@ -76,7 +76,7 @@ Content-Type: application/json
   "FirstName": "sara",
   "LastName": "marin",
   "DocumentType": "Cedula",
-  "DocumentNumber": 10388266112,
+  "DocumentNumber": 1017925098,
   "PhoneNumber": 3007546745,
   "Email":"maria@gmail.com",
   "State":2,
@@ -98,10 +98,10 @@ PUT http://localhost:10000/fepi/trainees/666916ed81e9251a90ff4fc6 HTTP/1.1
 Content-Type: application/json
 
 {
-  "FirstName": "jose ",
+  "FirstName": "laura ",
   "LastName": "herrera",
   "DocumentType": "Cedula",
-  "DocumentNumber": 1018935088,
+  "DocumentNumber": 10388266112,
   "State":2,
   "Email":"mariagmail.com",
   "PhoneNumber": 308475888,
