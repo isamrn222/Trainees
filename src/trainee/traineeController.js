@@ -32,13 +32,6 @@ exports.getTraineeById = async (req, res) => {
 exports.createTrainee = async (req, res) => {
 
     try {
-        const { DocumentNumber } = req.body;
-        const traineeExistente = await Traineemodel.findOne({ DocumentNumber });
-
-        if (traineeExistente) {
-            return res.status(400).send({ message: 'El número de cédula ya está en uso' });
-        }
-
         const Trainee = new Traineemodel(req.body);
         
         await Trainee.save();
@@ -59,14 +52,6 @@ exports.updateTrainee = async (req, res) => {
 
         if (!isValidOperation) {
             return res.status(400).send({ message: 'Actualización no permitida' });
-        }
-
-        // Validar que el nuevo número de cédula no esté en uso
-        if (req.body.DocumentNumber) {
-            const TraineesExistente = await Traineemodel.findOne({ DocumentNumber: req.body.DocumentNumber });
-            if (TraineesExistente && TraineesExistente._id.toString() !== req.params.id) {
-                return res.status(400).send({ message: 'El número de cédula ya está en uso' });
-            }
         }
 
         const trainees = await Traineemodel.findById(req.params.id);

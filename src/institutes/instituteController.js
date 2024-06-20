@@ -49,7 +49,6 @@ exports.createInstitute = async (req, res) => {
     }
 };
 
-// Controlador para actualizar un cliente existente
 exports.updateInstitute = async (req, res) => {
     try {
         const institute = await Institute.findById(req.params.id);

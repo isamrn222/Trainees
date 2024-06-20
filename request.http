@@ -73,11 +73,12 @@ POST http://localhost:10000/fepi/trainees/create HTTP/1.1
 Content-Type: application/json
 
 {
-  "FirstName": "leo",
+  "FirstName": "sara",
   "LastName": "marin",
   "DocumentType": "Cedula",
   "DocumentNumber": 10388266112,
   "PhoneNumber": 3007546745,
+  "Email":"maria@gmail.com",
   "State":2,
   "InstituteID": "663514ef8bb6bedc751d1cf5"
 }
@@ -89,19 +90,20 @@ GET http://localhost:10000/fepi/trainees HTTP/1.1
 
 
 ###
-GET http://localhost:10000/fepi/trainees/665bcea5e4b50d23b3b412e2 HTTP/1.1
+GET http://localhost:10000/fepi/trainees HTTP/1.1
 
 
 ###
-PUT http://localhost:10000/fepi/trainees/665bcea5e4b50d23b3b412e2 HTTP/1.1
+PUT http://localhost:10000/fepi/trainees/666916ed81e9251a90ff4fc6 HTTP/1.1
 Content-Type: application/json
 
 {
   "FirstName": "jose ",
   "LastName": "herrera",
   "DocumentType": "Cedula",
-  "DocumentNumber": 1017925045,
+  "DocumentNumber": 1018935088,
   "State":2,
+  "Email":"mariagmail.com",
   "PhoneNumber": 308475888,
   "InstituteID": "6639a1376142dce52eb93c34"
 
