@@ -47,16 +47,16 @@ const traineeSchema = new mongoose.Schema({
         type: String,
         required: [true,'el campo email es requerido']
     },
+    SocialHours: {
+        type: Number,
+        required: [true,'el campo SocialHours es requerido']
+    },
     InstituteID: {
         type: mongoose.Schema.Types.ObjectId,
         ref: 'institute',
         required: true
     },
-    ResponsabilitieTraineeID: {
-        type: mongoose.Schema.Types.ObjectId,
-        ref: 'responsabilitiestrainee',
-        required: true
-    }
+
    
 }, { timestamps: true });
 
