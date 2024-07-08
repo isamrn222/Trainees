@@ -49,7 +49,8 @@ const traineeSchema = new mongoose.Schema({
     },
     SocialHours: {
         type: Number,
-        required: [true,'el campo SocialHours es requerido']
+        default: 0,
+        required: [true,'el campo SocialHours es requerido',]
     },
     InstituteID: {
         type: mongoose.Schema.Types.ObjectId,
