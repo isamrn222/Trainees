@@ -52,6 +52,11 @@ const traineeSchema = new mongoose.Schema({
         ref: 'institute',
         required: true
     },
+    ResponsabilitieTraineeID: {
+        type: mongoose.Schema.Types.ObjectId,
+        ref: 'responsabilitiestrainee',
+        required: true
+    }
    
 }, { timestamps: true });
 

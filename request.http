@@ -76,11 +76,12 @@ Content-Type: application/json
   "FirstName": "sara",
   "LastName": "marin",
   "DocumentType": "Cedula",
-  "DocumentNumber": 1017925098,
+  "DocumentNumber": 101792509822,
   "PhoneNumber": 3007546745,
   "Email":"maria@gmail.com",
   "State":2,
-  "InstituteID": "663514ef8bb6bedc751d1cf5"
+  "InstituteID": "663514ef8bb6bedc751d1cf5",
+  "ResponsabilitieTraineeID": "663514ef8bb6bedc751d1cf5"
 }
 
 

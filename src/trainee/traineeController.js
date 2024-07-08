@@ -54,7 +54,7 @@ exports.createTrainee = async (req, res) => {
 exports.updateTrainee = async (req, res) => {
     try {
         const updates = Object.keys(req.body);
-        const allowedUpdates = ['FirstName', 'LastName', 'DocumentType', 'DocumentNumber', 'PhoneNumber', 'State', 'Email', 'InstituteID'];
+        const allowedUpdates = ['FirstName', 'LastName', 'DocumentType', 'DocumentNumber', 'PhoneNumber', 'State', 'Email', 'InstituteID','ResponsabilitieTraineeID'];
 
 
         const isValidOperation = updates.every(update => allowedUpdates.includes(update));
