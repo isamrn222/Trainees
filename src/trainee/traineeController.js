@@ -1,6 +1,6 @@
 const Traineemodel = require('../trainee/traineeModel');
 
-// Controlador para obtener todos los clientes
+
 exports.getTrainee = async (req, res) => {
     try {
         const trainee = await Traineemodel.find();
@@ -54,7 +54,7 @@ exports.createTrainee = async (req, res) => {
 exports.updateTrainee = async (req, res) => {
     try {
         const updates = Object.keys(req.body);
-        const allowedUpdates = ['FirstName', 'LastName', 'DocumentType', 'DocumentNumber', 'PhoneNumber', 'State', 'Email','SocialHours', 'InstituteID'];
+        const allowedUpdates = ['FirstName', 'LastName', 'DocumentType', 'DocumentNumber', 'PhoneNumber', 'State', 'Email','SocialHours','LimitSocialHours','InstituteID'];
 
 
         const isValidOperation = updates.every(update => allowedUpdates.includes(update));
