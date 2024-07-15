@@ -47,14 +47,25 @@ const traineeSchema = new mongoose.Schema({
         type: String,
         required: [true,'el campo email es requerido']
     },
-    SocialHours: {
-        type: Number,
-        default: 0,
-        required: [true,'el campo SocialHours es requerido',]
+    SocialHours:{
+        type: String,
+        validate: {
+            validator: function(v) {
+                return /^\d{1,2}:\d{2}$/.test(v); //esto es para validar que sea formato hh:mm
+            },
+            message: props => `${props.value} no es un formato de horas sociales válido.`
+        },
+        required: true
     },
     LimitSocialHours: {
-        type: Number,
-        required: [true,'el campo LimitSocialHours es requerido',]
+        type: String,
+        validate: {
+            validator: function(v) {
+                return /^\d{1,2}:\d{2}$/.test(v); //esto es para validar que sea formato hh:mm
+            },
+            message: props => `${props.value} no es un formato de limite de horas sociales válido.`
+        },
+        required: true
     },
     InstituteID: {
         type: mongoose.Schema.Types.ObjectId,
