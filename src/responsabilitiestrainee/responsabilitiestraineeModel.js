@@ -29,11 +29,11 @@ const ResponsabilitiesTraineeSchema = new mongoose.Schema({
         required: true
     },
 
-    TraineeID: {
+    TraineeID: [{
         type: mongoose.Schema.Types.ObjectId,
         ref: 'trainee', 
         required: [true, 'El campo nombre del practicante es requerido']
-    },
+    }],
     ResponsabilitieID: [{
         type: mongoose.Schema.Types.ObjectId,
         ref: 'responsabilitie', 
