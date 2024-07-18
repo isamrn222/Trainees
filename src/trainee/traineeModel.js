@@ -15,7 +15,7 @@ const traineeSchema = new mongoose.Schema({
         type: String,
         required: [true , 'El tipo de documento es requerido'],
         enum: {
-            values: ['Cedula', 'Tarjeta de identidad','Cedula extranjera'],
+            values: ['Cédula', 'Tarjeta de identidad','Cédula extranjera'],
             message: '{VALUE} no es un tipo de documento válido'
         } 
     },
