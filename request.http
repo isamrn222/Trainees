@@ -73,12 +73,14 @@ POST http://localhost:10000/fepi/trainees/create HTTP/1.1
 Content-Type: application/json
 
 {
-  "FirstName": "sara",
+  "FirstName": "daniela",
   "LastName": "marin",
-  "DocumentType": "Cedula",
-  "DocumentNumber": 10179250982,
+  "DocumentType": "Cédula",
+  "DocumentNumber": 1333002222,
   "PhoneNumber": 3007546745,
   "Email":"maria@gmail.com",
+  "SocialHours":"00:00",
+  "LimitSocialHours":"80:00",
   "State":2,
   "InstituteID": "663514ef8bb6bedc751d1cf5",
   "ResponsabilitieTraineeID": "663514ef8bb6bedc751d1cf5"
