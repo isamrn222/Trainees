@@ -2,13 +2,13 @@ const mongoose = require('mongoose');
 
 // Definición del esquema para el modelo de cliente
 const responsabilitieSchema = new mongoose.Schema({
+    Title: {
+        type: String,
+        required: [true,'el campo título es requerido']
+    },
     Description: {
         type: String,
         required: [true,'el campo descripción es requerido']
-    },
-    Location: {
-        type: String,
-        required: [true,'el campo ubicación es requerido']
     },
     State: {
         type: Number,

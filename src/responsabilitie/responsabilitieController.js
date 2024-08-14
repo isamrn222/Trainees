@@ -31,10 +31,10 @@ exports.getResponsabilitieById = async (req, res) => {
 
 //Controlador para crear nuvo institucion
 exports.createResponsabilitie = async (req, res) => {
-    const { Description, Location, State} = req.body;
+    const { Title,Description, State} = req.body;
     const responsabilitie = new Responsabilitiemodel({
+        Title,
         Description,
-        Location,
         State,
     });
     try {
@@ -53,9 +53,9 @@ exports.updateResponsabilitie = async (req, res) => {
             return res.status(404).json({ message: 'Responsabilidad no encontrada' });
         }
         
-        const { Description, Location, Duration, State} = req.body;
+        const { Description, Title, State} = req.body;
         if (Description != null) responsabilitie.Description = Description;
-        if (Location != null) responsabilitie.Location = Location;
+        if (Title != null) responsabilitie.Title = Title;
         if (State != null) responsabilitie.State = State;
 
 

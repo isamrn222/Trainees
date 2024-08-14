@@ -93,7 +93,7 @@ GET http://localhost:10000/fepi/trainees HTTP/1.1
 
 
 ###
-GET http://localhost:10000/fepi/trainees HTTP/1.1
+GET http://localhost:10000/fepi/trainees/66ac49226b9dbf04ce854068 HTTP/1.1
 
 
 ###
